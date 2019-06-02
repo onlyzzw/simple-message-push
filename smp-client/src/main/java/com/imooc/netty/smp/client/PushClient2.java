@@ -32,6 +32,7 @@ public class PushClient2 {
         bootstrap.channel(NioSocketChannel.class);
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
+        System.out.printf(bootstrap.toString());
         bootstrap.handler(new ChannelInitializer<NioSocketChannel>() {
             protected void initChannel(NioSocketChannel ch) {
 //                ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
