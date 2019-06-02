@@ -28,10 +28,7 @@ public class PushClient2 {
         NioEventLoopGroup group = new NioEventLoopGroup();
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
+        //revert
         bootstrap.handler(new ChannelInitializer<NioSocketChannel>() {
             protected void initChannel(NioSocketChannel ch) {
 //                ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
