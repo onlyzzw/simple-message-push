@@ -50,7 +50,7 @@ public class PushClient2 {
 
             Thread.sleep(50);
         }
-//test network
+//test network2
 
     }
 }
