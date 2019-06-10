@@ -22,7 +22,7 @@ public class PushClient2 {
         PushClient2 pushClient = new PushClient2();
         pushClient.start();
     }
-
+//start
     private void start() throws Exception {
         Bootstrap bootstrap = new Bootstrap();
         NioEventLoopGroup group = new NioEventLoopGroup();
@@ -50,7 +50,6 @@ public class PushClient2 {
 
             Thread.sleep(50);
         }
-//test network2
 
     }
 }
