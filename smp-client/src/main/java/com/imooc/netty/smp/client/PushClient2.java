@@ -13,40 +13,71 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PushClient2 {
-  private static final Logger logger = LoggerFactory.getLogger(PushClient2.class);
+    private static final Logger logger = LoggerFactory.getLogger(PushClient2.class);
 
-  private static final String HOST = "127.0.0.1";
-  private static final int PORT = 8000;
+    private static final String HOST = "127.0.0.1";
+    private static final int PORT = 8000;
 
-  public static void main(String[] args) throws Exception {
-    PushClient2 pushClient = new PushClient2();
-    pushClient.start();
-  }
-  //start
-  private void start() throws Exception {
-    Bootstrap bootstrap22222 = new Bootstrap();
-    //revert
-//        System.out.printf(bootstrap.toString());
-    bootstrap22222.handler(new ChannelInitializer<NioSocketChannel>() {
-      protected void initChannel(NioSocketChannel ch) {
-//                ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
-        ch.pipeline().addLast(new Spliter());
-        ch.pipeline().addLast(new PushMessageDecoder());
-        ch.pipeline().addLast(new PushAckEncoder());
-        ch.pipeline().addLast(PushMessageHandler.INSTANCE);
-      }
-    });
-
-    while (!Thread.interrupted()) {
-      ChannelFuture channelFuture = bootstrap22222.connect(HOST, PORT);
-      channelFuture.get();
-      if (!channelFuture.isSuccess()) {
-        logger.error("something has wrong, bye!");
-        break;
-      }
-
-      Thread.sleep(50);
+    public static void main(String[] args) throws Exception {
+        PushClient2 pushClient = new PushClient2();
+        pushClient.start();
     }
+//start
+    private void start() throws Exception {
+        Bootstrap bootstrap22222 = new Bootstrap();
+        NioEventLoopGroup group = new NioEventLoopGroup();
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
 
-  }
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+        //revert
+//        System.out.printf(bootstrap.toString());
+        bootstrap22222.handler(new ChannelInitializer<NioSocketChannel>() {
+            protected void initChannel(NioSocketChannel ch) {
+//                ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
+                ch.pipeline().addLast(new Spliter());
+                ch.pipeline().addLast(new PushMessageDecoder());
+                ch.pipeline().addLast(new PushAckEncoder());
+                ch.pipeline().addLast(PushMessageHandler.INSTANCE);
+            }
+        });
+
+        while (!Thread.interrupted()) {
+            ChannelFuture channelFuture = bootstrap22222.connect(HOST, PORT);
+            channelFuture.get();
+            if (!channelFuture.isSuccess()) {
+                logger.error("something has wrong, bye!");
+                break;
+            }
+
+            Thread.sleep(50);
+        }
+
+    }
 }
