@@ -24,22 +24,41 @@ public class PushClient2 {
     }
 //start
     private void start() throws Exception {
-        Bootstrap bootstrap = new Bootstrap();
+        Bootstrap bootstrap22222 = new Bootstrap();
         NioEventLoopGroup group = new NioEventLoopGroup();
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
 
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
 
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
 
-        bootstrap.group(group);
-        bootstrap.channel(NioSocketChannel.class);
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
+
+        bootstrap22222.group(group);
+        bootstrap22222.channel(NioSocketChannel.class);
         //revert
 //        System.out.printf(bootstrap.toString());
-        bootstrap.handler(new ChannelInitializer<NioSocketChannel>() {
+        bootstrap22222.handler(new ChannelInitializer<NioSocketChannel>() {
             protected void initChannel(NioSocketChannel ch) {
 //                ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
                 ch.pipeline().addLast(new Spliter());
@@ -50,7 +69,7 @@ public class PushClient2 {
         });
 
         while (!Thread.interrupted()) {
-            ChannelFuture channelFuture = bootstrap.connect(HOST, PORT);
+            ChannelFuture channelFuture = bootstrap22222.connect(HOST, PORT);
             channelFuture.get();
             if (!channelFuture.isSuccess()) {
                 logger.error("something has wrong, bye!");
