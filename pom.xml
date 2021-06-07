@@ -20,7 +20,7 @@
         <java.src.version>1.8</java.src.version>
         <java.target.version>1.8</java.target.version>
         <project.encoding>UTF-8</project.encoding>
-        <logback-classic.version>1.0.6</logback-classic.version>
+        <logback-classic.version>1.2.0</logback-classic.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
     </properties>
 
